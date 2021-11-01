@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace AssemblyBrowser.Lib.Extensions
+namespace AssemblyBrowserLib.Extensions
 {
     public static class FieldInfoExtensions
     {

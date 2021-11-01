@@ -5,19 +5,18 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-using AssemblyBrowser.Lib.Node;
-using AssemblyBrowser.Lib.Extensions;
+using AssemblyBrowserLib.Extensions;
 using static System.Reflection.BindingFlags;
 
-namespace AssemblyBrowser
+namespace AssemblyBrowserLib
 {
-    class AssemlyBrowser
+    public static class AssemblyBrowser
     {
         private static readonly List<Node> Extensions = new();
 
-        public List<INode> GetAssemblyInfo(string assemblyPath)
+        public static List<INode> GetAssemblyInfo(string assemblyPath)
         {
-            var assembly = Assembly.Load(assemblyPath);
+            var assembly = Assembly.LoadFrom(assemblyPath);
             var assemblyInfo = new Dictionary<string, INode>();
 
 

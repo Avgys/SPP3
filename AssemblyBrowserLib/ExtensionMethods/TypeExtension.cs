@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 
-namespace AssemblyBrowser.Lib.Extensions
+namespace AssemblyBrowserLib.Extensions
 {
     public static class TypeExtensions
     {

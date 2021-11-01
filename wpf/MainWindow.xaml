@@ -3,10 +3,43 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:wpf"
+        xmlns:local="clr-namespace:AssemblyBrowser.Wpf"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <DataTemplate x:Key="TreeViewItemTemplate">
+            <Grid/>
+        </DataTemplate>
+    </Window.Resources>
+    <Window.DataContext>
+        <local:ViewModel/>
+    </Window.DataContext>
     <Grid>
-
+        <Menu Height="28" VerticalAlignment="Top" Foreground="White" Background="#FF323232">
+            <MenuItem Header="File">
+                <MenuItem Header="Open" Command="{Binding OpenFileCommand}"/>
+            </MenuItem>
+        </Menu>
+        <StatusBar Height="35" VerticalAlignment="Top" Margin="0,399,0,0">
+            <StatusBarItem Height="35" VerticalAlignment="Center" Background="#FF2C2C2C" >
+                <TextBlock Text="{Binding OpenedFile}" TextWrapping="Wrap" Foreground="White"/>
+            </StatusBarItem>
+        </StatusBar>
+        <TreeView Margin="0,28,0,35" ItemsSource="{Binding Namespaces}" Background="#FF444444">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate  ItemsSource="{Binding Path=Nodes}">
+                    <TextBlock Padding="0, 3">
+                        <Run Text="{Binding Optional, UpdateSourceTrigger=PropertyChanged}" Foreground="#dcdcaa"/>
+                        <Run Text="{Binding NodeType, UpdateSourceTrigger=PropertyChanged}" Foreground="#89d6a2"/>
+                        <Run Text="{Binding AccessModifier, UpdateSourceTrigger=PropertyChanged}" Foreground="#569cd6"/>
+                        <Run Text="{Binding TypeModifier, UpdateSourceTrigger=PropertyChanged}" Foreground="#569cd6"/>
+                        <Run Text="{Binding ClassType, UpdateSourceTrigger=PropertyChanged}" Foreground="#569cd6"/>
+                        <Run Text="{Binding Type, UpdateSourceTrigger=PropertyChanged}" Foreground="#4ec9b0"/>
+                        <Run Text="{Binding ReturnType, UpdateSourceTrigger=PropertyChanged}" Foreground="#4ec9b0"/>
+                        <Run Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" Foreground="#dcdcdc"/>
+                    </TextBlock>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
+        </TreeView>
     </Grid>
 </Window>

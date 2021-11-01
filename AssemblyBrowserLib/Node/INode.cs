@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace AssemblyBrowser.Lib.Node
+namespace AssemblyBrowserLib
 {
     public interface INode
     {
