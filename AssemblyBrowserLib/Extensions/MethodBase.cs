@@ -1,4 +1,6 @@
-﻿using System.Reflection;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
 
 namespace AssemblyBrowserLib.Extensions
 {
@@ -18,6 +20,12 @@ namespace AssemblyBrowserLib.Extensions
                 return "protected internal";
 
             return "";
+        }
+
+        public static IEnumerable<Node> GetParameterNodes(this MethodBase methodInfo)
+        {
+            return (from parameter in methodInfo.GetParameters()
+                    select parameter.GetNode()).ToList();
         }
 
         public static string GetTypeModifier(this MethodBase methodBase)

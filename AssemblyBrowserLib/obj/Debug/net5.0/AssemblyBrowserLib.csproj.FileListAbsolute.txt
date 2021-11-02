@@ -9,4 +9,3 @@ C:\Users\ilyuh\Desktop\Main Projects For Study\SPP3\AssemblyBrowserLib\obj\Debug
 C:\Users\ilyuh\Desktop\Main Projects For Study\SPP3\AssemblyBrowserLib\obj\Debug\net5.0\AssemblyBrowserLib.dll
 C:\Users\ilyuh\Desktop\Main Projects For Study\SPP3\AssemblyBrowserLib\obj\Debug\net5.0\ref\AssemblyBrowserLib.dll
 C:\Users\ilyuh\Desktop\Main Projects For Study\SPP3\AssemblyBrowserLib\obj\Debug\net5.0\AssemblyBrowserLib.pdb
-C:\Users\ilyuh\Desktop\Main Projects For Study\SPP3\AssemblyBrowserLib\obj\Debug\net5.0\AssemblyBrowserLib.csproj.AssemblyReference.cache
