@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using AssemblyBrowserLib;
 namespace AssemblyBrowserLib
 {
     public class Node : INode
@@ -33,16 +34,16 @@ namespace AssemblyBrowserLib
             IEnumerable<INode> nodes = null
         )
         {
-            Optional = optional;
-            NodeType = nodeType;
-            AccessModifier = accessModifier;
-            TypeModifier = typeModifier;
-            ClassType = classType;
-            Type = type;
-            FullType = fullType;
-            ReturnType = returnType;
-            Name = name;
-            AddRange(nodes);
+            this.Optional = optional;
+            this.NodeType = nodeType;
+            this.AccessModifier = accessModifier;
+            this.TypeModifier = typeModifier;
+            this.ClassType = classType;
+            this.Type = type;
+            this.FullType = fullType;
+            this.ReturnType = returnType;
+            this.Name = name;
+            this.AddRange(nodes);
         }
 
         public void AddNode(INode node)
@@ -50,14 +51,6 @@ namespace AssemblyBrowserLib
             if (node != null)
             {
                 Nodes.Add(node);
-            }
-        }
-
-        public void AddRange(IEnumerable<INode> nodes)
-        {
-            if (nodes != null)
-            {
-                Nodes.AddRange(nodes);
             }
         }
     }

@@ -17,7 +17,7 @@ namespace AssemblyBrowserLib.Extensions
             var fullType = type.FullName;
             var name = type.ToGenericTypeString();
 
-            Node typeNode = new Node("type", accessModifier: accessModifier, typeModifier: typeModifier,
+            Node typeNode = new Node("[type]", accessModifier: accessModifier, typeModifier: typeModifier,
                 classType: classType, fullType: fullType, name: name);
 
             var typeMembers = type.GetMembers(NonPublic

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using AssemblyBrowserLib.Extensions;
-using AssemblyBrowserLib;
 using static System.Reflection.BindingFlags;
 
 namespace AssemblyBrowserLib
@@ -60,6 +59,16 @@ namespace AssemblyBrowserLib
                         }
                     }
                 }
+            }
+        }
+
+
+
+        public static void AddRange(this Node node, IEnumerable<INode> nodes)
+        {
+            if (nodes != null)
+            {
+                node.Nodes.AddRange(nodes);
             }
         }
     }
